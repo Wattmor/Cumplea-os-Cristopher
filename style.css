@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Comic Sans MS", sans-serif;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.contenido {
+  z-index: 2;
+  margin-bottom: 150px; /* deja espacio para la pelota abajo */
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ffcc00;
+  text-shadow: 0 0 20px #ffcc00;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 30px;
+}
+
+.direccion {
+  font-size: 1.2rem;
+  color: #ffffffcc;
+  margin-top: 20px;
+}
+
+/* Pelota con imagen */
+.pelota {
+  width: 120px;
+  height: 120px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg');
+  background-size: cover;
+  position: absolute;
+  bottom: 20px; /* la pelota rebota más abajo */
+  animation: rebotar 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px #ffffff);
+  z-index: 1;
+}
+
+/* Animación de rebote */
+@keyframes rebotar {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-150px);
+  }
+}
+
+/* Brillos del fondo */
+.brillo {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: destello 3s infinite ease-in-out;
+}
+
+/* Animación de brillos */
+@keyframes destello {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+button {
+  background: linear-gradient(90deg, #00ffcc, #0066ff);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffff;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+#mensaje {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffff;
+}
